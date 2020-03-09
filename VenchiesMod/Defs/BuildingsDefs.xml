@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>TestingBuildingg</defName>
+    <label>AAAaaaAAA</label>
+    <description>shut up</description>
+    <thingClass>VehiclesSource.Buildings.Buildings.Building_TestB</thingClass>
+	<designationCategory>Misc</designationCategory>
+    <graphicData>
+      <texPath>Things/Building/Linked/PowerConduit_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToBuild>35</WorkToBuild>
+      <Beauty>99</Beauty>
+    </statBases>
+    <costList>
+      <Steel>20</Steel>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+		<glowColor>(81,130,176,0)</glowColor>
+      </li>
+	  <li Class="CompProperties_Battery">
+        <storedEnergyMax>10000</storedEnergyMax>
+		<efficiency>1</efficiency>
+      </li>
+	  <li Class="CompProperties_Flickable"/>
+    </comps>
+
+  </ThingDef>
+
+ </Defs>
