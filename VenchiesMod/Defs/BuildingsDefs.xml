@@ -5,7 +5,7 @@
     <defName>TestingBuildingg</defName>
     <label>AAAaaaAAA</label>
     <description>shut up</description>
-    <thingClass>VehiclesSource.Buildings.Buildings.Building_TestB</thingClass>
+    <thingClass>VehiclesSource.Buildings.Building_TestB</thingClass>
 	<designationCategory>Misc</designationCategory>
     <graphicData>
       <texPath>Things/Building/Linked/PowerConduit_Atlas</texPath>
