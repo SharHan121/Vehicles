@@ -15,7 +15,7 @@
   <BodyPartDef>
     <defName>VhCapote</defName>
     <label>capote</label>
-    <hitPoints>30</hitPoints>
+    <hitPoints>28</hitPoints>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
     <skinCovered>false</skinCovered>
     <solid>true</solid>
@@ -40,7 +40,7 @@
   <BodyPartDef>
     <defName>VhCarrier</defName>
     <label>carrier</label>
-    <hitPoints>20</hitPoints>
+    <hitPoints>25</hitPoints>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
     <skinCovered>false</skinCovered>
     <solid>true</solid>
@@ -51,7 +51,7 @@
   <BodyPartDef>
     <defName>VhDoor</defName>
     <label>door</label>
-    <hitPoints>20</hitPoints>
+    <hitPoints>25</hitPoints>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
     <skinCovered>false</skinCovered>
     <solid>true</solid>
@@ -62,7 +62,7 @@
   <BodyPartDef>
     <defName>VhEngine</defName>
     <label>engine</label>
-    <hitPoints>15</hitPoints>
+    <hitPoints>20</hitPoints>
 	<frostbiteVulnerability>2</frostbiteVulnerability>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
     <skinCovered>false</skinCovered>

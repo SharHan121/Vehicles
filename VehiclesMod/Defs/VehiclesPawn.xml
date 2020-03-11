@@ -44,9 +44,9 @@
 	
     <statBases>
       <MoveSpeed>10</MoveSpeed>
-      <ArmorRating_Blunt>1</ArmorRating_Blunt>
-      <ArmorRating_Sharp>1</ArmorRating_Sharp>
-      <PsychicSensitivity>1</PsychicSensitivity>
+      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+      <PsychicSensitivity>0</PsychicSensitivity>
     </statBases>
 
     <race>
