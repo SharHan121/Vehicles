@@ -5,6 +5,7 @@ using System.Text;
 using RimWorld;
 using Verse;
 
+
 namespace VehiclesSource.Buildings
 {
     class Building_TestB : Building
@@ -12,18 +13,30 @@ namespace VehiclesSource.Buildings
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
-            base.SpawnSetup(map, respawningAfterLoad);
-            Log.Message("spawnrd!");
-            foreach (var pawnf in map.mapPawns.FreeColonists)
+            //base.SpawnSetup(map, respawningAfterLoad);
+            PawnKindDef mytest = DefDatabase<PawnKindDef>.GetNamed("VenchiesTest");
+            Pawn pawn;
+            if (mytest != null)
             {
-                Log.Message(pawnf.Name.ToString());
+                pawn = PawnGenerator.GeneratePawn(mytest,this.Faction);
+                GenPlace.TryPlaceThing(pawn, this.Position, map, ThingPlaceMode.Near, null);
+                Log.Message("yayayayay!!");
             }
         }
+
+        public override void Tick()
+        {
+            base.Tick();
+        }
+
         public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn selPawn)
         {
-            yield return new FloatMenuOption("Label", delegate
+            yield return new FloatMenuOption("LALALALALALLALAL", delegate
             {
                 Log.Message(selPawn.Name.ToString());
+                Current.Game.GetComponent<GameComps>().spawn = selPawn;
+                selPawn.DeSpawn();
+                
             });
         }
 
@@ -38,7 +51,10 @@ namespace VehiclesSource.Buildings
             command_Action.defaultDesc = "Backup your colonist";
             command_Action.action = delegate
             {
-                Log.Message("backup!!");
+                
+                Current.Game.GetComponent<GameComps>().spawn.SpawnSetup(this.Map,true);
+                
+
             };
             yield return command_Action;
         }
