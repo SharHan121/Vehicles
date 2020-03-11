@@ -14,7 +14,7 @@ namespace VehiclesSource.Buildings
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             //base.SpawnSetup(map, respawningAfterLoad);
-            PawnKindDef mytest = DefDatabase<PawnKindDef>.GetNamed("VenchiesTest");
+            PawnKindDef mytest = DefDatabase<PawnKindDef>.GetNamed("VehiclesTest");
             Pawn pawn;
             if (mytest != null)
             {
