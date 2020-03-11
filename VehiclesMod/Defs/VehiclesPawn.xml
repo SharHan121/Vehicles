@@ -37,7 +37,7 @@
   
     <ThingDef ParentName="BaseVehicles">
     <defName>VehiclesTest</defName>
-    <label>Vehicles</label>
+    <label>Vehicle</label>
 	<thingClass>VehiclesSource.Pawns.Pawn_Vehicle</thingClass>
 
     <description>ThingDef VehiclesTest description</description>
@@ -51,9 +51,9 @@
 
     <race>
       <thinkTreeMain>Mechanoid</thinkTreeMain>
-      <body>MechanicalCentipede</body>
+      <body>VehicleBody</body>
       <baseBodySize>4</baseBodySize>
-      <baseHealthScale>4.32</baseHealthScale>
+      <baseHealthScale>1</baseHealthScale>
 	  
       <lifeStageAges>
         <li>
@@ -72,7 +72,7 @@
   
   <PawnKindDef ParentName="BaseMechanoidKind">
     <defName>VehiclesTest</defName>
-    <label>vehiclestest label</label>
+    <label>Vehicle</label>
     <race>VehiclesTest</race>
 	<isFighter>false</isFighter>
 	<combatPower>0</combatPower>

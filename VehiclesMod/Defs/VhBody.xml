@@ -2,103 +2,109 @@
 <Defs>
 
   <BodyDef>
-    <defName>Vehicle</defName>
-    <label>vehicle label</label>
+    <defName>VehicleBody</defName>
+    <label>bodydef vehicle label</label>
     <corePart>
-      <def>MechanicalCentipedeBodyFirstRing</def>
+      <def>VhFrame</def>
       <height>Middle</height>
       <depth>Outside</depth>
       <parts>
+	  
         <li>
-          <def>MechanicalHead</def>
-          <coverage>0.15</coverage>
-          <height>Top</height>
-          <groups>
-            <li>HeadAttackTool</li>
-          </groups>
+          <def>VhCapote</def>
+          <coverage>0.45</coverage>
+          <height>Middle</height>
+		  <depth>Outside</depth>
+
           <parts>
             <li>
-              <def>ArtificialBrain</def>
-              <coverage>0.05</coverage>
+              <def>VhEngine</def>
+              <coverage>0.15</coverage>
               <depth>Inside</depth>
-            </li>
-			
-            <li>
-              <def>SightSensor</def>
-              <customLabel>left sight sensor</customLabel>
-              <coverage>0.08</coverage>
-            </li>
-			
-            <li>
-              <def>SightSensor</def>
-              <customLabel>right sight sensor</customLabel>
-              <coverage>0.08</coverage>
-            </li>
-			
-            <li>
-              <def>HearingSensor</def>
-              <customLabel>left hearing sensor</customLabel>
-              <coverage>0.08</coverage>
-            </li>
-			
-            <li>
-              <def>HearingSensor</def>
-              <customLabel>right hearing sensor</customLabel>
-              <coverage>0.08</coverage>
-            </li>
-			
-            <li>
-              <def>SmellSensor</def>
-              <coverage>0.08</coverage>
             </li>
           </parts>
         </li>
 		
+		<!--======-->
 		
-		
-        <li>
-          <def>MechanicalCentipedeBodySecondRing</def>
-          <coverage>0.71</coverage>
-          <parts>
-            <li>
-              <def>Reactor</def>
-              <coverage>0.05</coverage>
-              <depth>Inside</depth>
-            </li>
-            <li>
-              <def>MechanicalCentipedeBodyThirdRing</def>
-              <coverage>0.8</coverage>
-              <parts>
-                <li>
-                  <def>FluidReprocessor</def>
-                  <coverage>0.05</coverage>
-                  <depth>Inside</depth>
-                </li>
-                <li>
-                  <def>MechanicalCentipedeBodyFourthRing</def>
-                  <coverage>0.75</coverage>
-                  <parts>
-                    <li>
-                      <def>FluidReprocessor</def>
-                      <coverage>0.06</coverage>
-                      <depth>Inside</depth>
-                    </li>
-                    <li>
-                      <def>MechanicalCentipedeBodyFifthRing</def>
-                      <coverage>0.66</coverage>
-                      <parts>
-                        <li>
-                          <def>MechanicalCentipedeBodySixthRing</def>
-                          <coverage>0.5</coverage>
-                        </li>
-                      </parts>
-                    </li>
-                  </parts>
-                </li>
-              </parts>
-            </li>
-          </parts>
+		<li>
+			<def>VhCarrier</def>
+			<customLabel>carrier</customLabel>
+            <coverage>0.35</coverage>
+			<height>Middle</height>
+            <depth>Outside</depth>
         </li>
+		
+		<!--======-->
+		
+		<li>
+			<def>VhDoor</def>
+			<customLabel>front left door</customLabel>
+            <coverage>0.40</coverage>
+			<height>Middle</height>
+            <depth>Outside</depth>
+        </li>
+		
+		<li>
+			<def>VhDoor</def>
+			<customLabel>front right door</customLabel>
+            <coverage>0.40</coverage>
+			<height>Middle</height>
+            <depth>Outside</depth>
+        </li>
+		
+		<li>
+			<def>VhDoor</def>
+			<customLabel>back left door</customLabel>
+            <coverage>0.40</coverage>
+			<height>Middle</height>
+            <depth>Outside</depth>
+        </li>
+		
+		<li>
+			<def>VhDoor</def>
+			<customLabel>back right door</customLabel>
+            <coverage>0.40</coverage>
+			<height>Middle</height>
+            <depth>Outside</depth>
+        </li>
+		
+		<!--======-->
+		
+		<li>
+            <def>VhWheel</def>
+			<customLabel>front left wheel</customLabel>
+            <coverage>0.10</coverage>
+			<height>Bottom</height>
+            <depth>Outside</depth>
+        </li>
+		
+		<li>
+            <def>VhWheel</def>
+			<customLabel>front right wheel</customLabel>
+            <coverage>0.10</coverage>
+			<height>Bottom</height>
+            <depth>Outside</depth>
+        </li>
+		
+		<li>
+            <def>VhWheel</def>
+			<customLabel>back left wheel</customLabel>
+            <coverage>0.10</coverage>
+			<height>Bottom</height>
+            <depth>Outside</depth>
+        </li>
+		
+		<li>
+            <def>VhWheel</def>
+			<customLabel>back right wheel</customLabel>
+            <coverage>0.10</coverage>
+			<height>Bottom</height>
+            <depth>Outside</depth>
+        </li>
+
+
+
       </parts>
     </corePart>
   </BodyDef>
