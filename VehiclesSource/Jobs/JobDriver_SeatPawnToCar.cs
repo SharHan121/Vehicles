@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using RimWorld;
-using Verse;
 using Verse.AI;
 
 namespace VehiclesSource.Jobs
@@ -14,7 +12,10 @@ namespace VehiclesSource.Jobs
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return pawn.Reserve(TargetA, job);   
+            if (pawn_v.pawnOnVehicle < 4)
+                return true;
+            else
+                return false;
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
@@ -34,6 +35,9 @@ namespace VehiclesSource.Jobs
                     }
                 }
             };
+
+            seat.defaultCompleteMode = ToilCompleteMode.Instant;
+
             yield return seat;
         }
     

@@ -57,6 +57,7 @@
     <Compile Include="GameComps.cs" />
     <Compile Include="JobDefOfLocal.cs" />
     <Compile Include="Jobs\JobDriver_SeatPawnToCar.cs" />
+    <Compile Include="Jobs\JobDriver_FillTheCar.cs" />
     <Compile Include="Pawns\Pawn_Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

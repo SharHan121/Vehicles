@@ -8,5 +8,11 @@
 	   <driverClass>VehiclesSource.Jobs.JobDriver_SeatPawnToCar</driverClass>
 	   <reportString>moving.</reportString>
 	</JobDef>
+	
+	<JobDef>
+	   <defName>FillTheCar</defName>
+	   <driverClass>VehiclesSource.Jobs.JobDriver_FillTheCar</driverClass>
+	   <reportString>moving.</reportString>
+	</JobDef>
 
 </Defs>

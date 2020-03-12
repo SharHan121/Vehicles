@@ -12,5 +12,6 @@ namespace VehiclesSource
     public static class JobDefOfLocal
     {
         public static JobDef SeatPawnToCar;
+        public static JobDef FillTheCar;
     }
 }
