@@ -39,7 +39,7 @@ namespace VehiclesSource.Pawns
 
         public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn selPawn)
         {
-            if(pawnOnVehicle < 4) 
+            if (pawnOnVehicle < 4 && !this.Downed) 
             yield return new FloatMenuOption("Seat on the car", delegate
             {
                 Job job = new Job(JobDefOfLocal.SeatPawnToCar, this);
