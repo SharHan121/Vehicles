@@ -10,7 +10,6 @@ namespace VehiclesSource.Buildings
 {
     class Building_TestB : Building
     {
-
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             //base.SpawnSetup(map, respawningAfterLoad);
@@ -20,9 +19,7 @@ namespace VehiclesSource.Buildings
             {
                 pawn = PawnGenerator.GeneratePawn(mytest,this.Faction);
                 GenPlace.TryPlaceThing(pawn, this.Position, map, ThingPlaceMode.Near, null);
-                Log.Message("yayayayay!!");
             }
         }
-
     }
 }
