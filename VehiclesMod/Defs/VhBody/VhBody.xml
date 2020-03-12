@@ -2,8 +2,8 @@
 <Defs>
 
   <BodyDef>
-    <defName>VehicleBody</defName>
-    <label>bodydef vehicle label</label>
+    <defName>Vehicle</defName>
+    <label>vehicle</label>
     <corePart>
       <def>VhFrame</def>
       <height>Middle</height>
@@ -12,27 +12,26 @@
 	  
         <li>
           <def>VhCapote</def>
-          <coverage>0.45</coverage>
+          <coverage>0.09</coverage>
           <height>Middle</height>
-		  <depth>Outside</depth>
-
-          <parts>
-            <li>
-              <def>VhEngine</def>
-              <coverage>0.15</coverage>
-              <depth>Inside</depth>
-            </li>
-          </parts>
-        </li>
+		  <depth>Inside</depth>
+		  <parts>
+			<li>
+				<def>VhEngine</def>
+				<coverage>0.7</coverage>
+				<depth>Inside</depth>
+			</li>
+		  </parts>
+		</li>
 		
 		<!--======-->
 		
 		<li>
 			<def>VhCarrier</def>
 			<customLabel>carrier</customLabel>
-            <coverage>0.35</coverage>
+            <coverage>0.08</coverage>
 			<height>Middle</height>
-            <depth>Outside</depth>
+            <depth>Inside</depth>
         </li>
 		
 		<!--======-->
@@ -40,33 +39,33 @@
 		<li>
 			<def>VhDoor</def>
 			<customLabel>front left door</customLabel>
-            <coverage>0.40</coverage>
+            <coverage>0.075</coverage>
 			<height>Middle</height>
-            <depth>Outside</depth>
+            <depth>Inside</depth>
         </li>
 		
 		<li>
 			<def>VhDoor</def>
 			<customLabel>front right door</customLabel>
-            <coverage>0.40</coverage>
+            <coverage>0.075</coverage>
 			<height>Middle</height>
-            <depth>Outside</depth>
+            <depth>Inside</depth>
         </li>
 		
 		<li>
 			<def>VhDoor</def>
 			<customLabel>back left door</customLabel>
-            <coverage>0.40</coverage>
+            <coverage>0.075</coverage>
 			<height>Middle</height>
-            <depth>Outside</depth>
+            <depth>Inside</depth>
         </li>
 		
 		<li>
 			<def>VhDoor</def>
 			<customLabel>back right door</customLabel>
-            <coverage>0.40</coverage>
+            <coverage>0.075</coverage>
 			<height>Middle</height>
-            <depth>Outside</depth>
+            <depth>Inside</depth>
         </li>
 		
 		<!--======-->
@@ -74,36 +73,66 @@
 		<li>
             <def>VhWheel</def>
 			<customLabel>front left wheel</customLabel>
-            <coverage>0.10</coverage>
+            <coverage>0.04</coverage>
 			<height>Bottom</height>
             <depth>Outside</depth>
+			<parts>
+				<li>
+				<def>VhTire</def>
+				<customLabel>front left tire</customLabel>
+				<coverage>0.45</coverage>
+				<depth>Inside</depth>
+				</li>
+			</parts>
         </li>
 		
 		<li>
             <def>VhWheel</def>
 			<customLabel>front right wheel</customLabel>
-            <coverage>0.10</coverage>
+            <coverage>0.04</coverage>
 			<height>Bottom</height>
             <depth>Outside</depth>
+			<parts>
+				<li>
+				<def>VhTire</def>
+				<customLabel>front right tire</customLabel>
+				<coverage>0.45</coverage>
+				<depth>Inside</depth>
+				</li>
+			</parts>
         </li>
 		
 		<li>
             <def>VhWheel</def>
 			<customLabel>back left wheel</customLabel>
-            <coverage>0.10</coverage>
+            <coverage>0.04</coverage>
 			<height>Bottom</height>
             <depth>Outside</depth>
+			<parts>
+				<li>
+				<def>VhTire</def>
+				<customLabel>back left tire</customLabel>
+				<coverage>0.45</coverage>
+				<depth>Inside</depth>
+				</li>
+			</parts>
         </li>
 		
 		<li>
             <def>VhWheel</def>
 			<customLabel>back right wheel</customLabel>
-            <coverage>0.10</coverage>
+            <coverage>0.04</coverage>
 			<height>Bottom</height>
             <depth>Outside</depth>
+			<parts>
+				<li>
+				<def>VhTire</def>
+				<customLabel>back right tire</customLabel>
+				<coverage>0.45</coverage>
+				<depth>Inside</depth>
+				</li>
+			</parts>
         </li>
-
-
 
       </parts>
     </corePart>

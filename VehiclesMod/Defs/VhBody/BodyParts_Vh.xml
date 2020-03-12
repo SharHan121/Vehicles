@@ -4,7 +4,7 @@
   <BodyPartDef>
     <defName>VhFrame</defName>
     <label>frame</label>
-    <hitPoints>80</hitPoints>
+    <hitPoints>100</hitPoints>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
     <skinCovered>false</skinCovered>
     <solid>true</solid>
@@ -15,7 +15,7 @@
   <BodyPartDef>
     <defName>VhCapote</defName>
     <label>capote</label>
-    <hitPoints>28</hitPoints>
+    <hitPoints>25</hitPoints>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
     <skinCovered>false</skinCovered>
     <solid>true</solid>
@@ -31,9 +31,6 @@
     <skinCovered>false</skinCovered>
     <solid>true</solid>
     <bleedRate>0</bleedRate>
-    <tags>
-      <li>MovingLimbSegment</li>
-    </tags>
     <alive>false</alive>
   </BodyPartDef>
   
@@ -51,7 +48,7 @@
   <BodyPartDef>
     <defName>VhDoor</defName>
     <label>door</label>
-    <hitPoints>25</hitPoints>
+    <hitPoints>20</hitPoints>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
     <skinCovered>false</skinCovered>
     <solid>true</solid>
@@ -70,6 +67,20 @@
     <bleedRate>0</bleedRate>
 	<tags>
       <li>MovingLimbCore</li>
+    </tags>
+    <alive>false</alive>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>VhTire</defName>
+    <label>tire</label>
+    <hitPoints>5</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>MovingLimbSegment</li>
     </tags>
     <alive>false</alive>
   </BodyPartDef>

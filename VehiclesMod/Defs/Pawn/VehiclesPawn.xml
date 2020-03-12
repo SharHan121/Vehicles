@@ -37,14 +37,7 @@
           <minAge>0</minAge>
         </li>
       </lifeStageAges>
-    </race>
-	
-    <comps>
-      <li Class="CompProperties_CanBeDormant" />
-      <li Class="CompProperties_WakeUpDormant">
-        <wakeUpOnDamage>false</wakeUpOnDamage>
-      </li>
-    </comps>
+    </race>	
 	
   </ThingDef>
 
