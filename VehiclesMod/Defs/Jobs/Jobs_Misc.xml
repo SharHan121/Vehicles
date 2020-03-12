@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<Defs>
+
+    <JobDef>
+	   <defName>SeatPawnToCar</defName>
+	   <driverClass>VehiclesSource.Jobs.JobDriver_SeatPawnToCar</driverClass>
+	   <reportString>moving.</reportString>
+	</JobDef>
+
+</Defs>
