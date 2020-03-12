@@ -4,18 +4,19 @@
   <ThingDef ParentName="BuildingBase">
     <defName>TestingBuildingg</defName>
     <label>AAAaaaAAA</label>
+	<size>(4,4)</size>
     <description>shut up</description>
     <thingClass>VehiclesSource.Buildings.Building_TestB</thingClass>
 	<designationCategory>Misc</designationCategory>
     <graphicData>
-      <texPath>Things/Building/Linked/PowerConduit_Atlas</texPath>
+      <texPath>cars/car</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(3,3)</drawSize>
     </graphicData>
 
     <statBases>
       <MaxHitPoints>80</MaxHitPoints>
-      <WorkToBuild>35</WorkToBuild>
+      <WorkToBuild>10000</WorkToBuild>
       <Beauty>99</Beauty>
     </statBases>
     <costList>
