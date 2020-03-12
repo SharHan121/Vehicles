@@ -15,7 +15,7 @@
     </statBases>
 	
     <race>
-      <thinkTreeMain>Mechanoid</thinkTreeMain>
+      <thinkTreeMain>Vehicles</thinkTreeMain>
       <body>Vehicle</body>
       <baseBodySize>8.5714</baseBodySize>
       <baseHealthScale>1</baseHealthScale>
