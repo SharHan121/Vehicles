@@ -8,36 +8,55 @@ using Verse.AI;
 
 namespace VehiclesSource.Pawns
 {
+
+
     class Pawn_Vehicle : Pawn, IAttackTarget, IThingHolder
     {
         public int pawnOnVehicle = 0;
-        public int gas = 0;
+
         public int maxGase = 500;
+
+        public int gas = 0;
+
+        private VehicleComponent gs;
+
+        public VehicleComponent gamecomps
+        {
+            get
+            {
+                if (gs == null) gs = Current.Game.GetComponent<VehicleComponent>();
+                return gs;
+            }
+        }
+
+
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
+            gamecomps.VehiclesOnMap.Add(this);
         }
+
 
         public void SeatToCar(Pawn pawn)
         {
             this.inventory.TryAddItemNotForSale(pawn.SplitOff(1));
             pawnOnVehicle++;
         }
-  
+
 
         public override string GetInspectString()
         {
             string istring = "";
             pawnOnVehicle = 0; // оптимизированая проверка количеста людей в машине
-            foreach(Pawn pawn in this.inventory.innerContainer)
+            foreach (Pawn pawn in this.inventory.innerContainer)
             {
-                if(pawn.IsColonist)
+                if (pawn.IsColonist)
                 {
-                    istring +=  pawn.Name.ToString() + "\n";
+                    istring += pawn.Name.ToString() + "\n";
                     pawnOnVehicle++;
                 }
             }
-            istring += "\0" + "\n" + $"Gas left: {this.gas}";
+            istring += "\0" + "\n" + $"Gas left: {this.gas} \\ {this.maxGase}";
             return istring;
         }
 
@@ -57,7 +76,7 @@ namespace VehiclesSource.Pawns
                     yield return new FloatMenuOption("Fill with gasoline", delegate
                     {
                         IEnumerable<Thing> GasOnMap = Map.listerThings.ThingsOfDef(ThingDef.Named("Chemfuel"));
-                        Job job = new Job(JobDefOfLocal.FillTheCar, this, GasOnMap.RandomElement());
+                        Job job = new Job(JobDefOfLocal.FillTheCar, this,GasOnMap.RandomElement());
                         job.playerForced = true;
                         job.count = 1;
                         selPawn.jobs.TryTakeOrderedJob(job);
@@ -69,4 +88,8 @@ namespace VehiclesSource.Pawns
 
 
     }
+
+
+
+
 }

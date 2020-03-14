@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<Defs>
+
+  <MainButtonDef>
+    <defName>Vehicles</defName>
+    <label>Vehicles</label>
+    <description>List vehicles on the map.</description>
+    <tabWindowClass>VehiclesSource.Tab.MainTabWindow_Vehicles</tabWindowClass>
+    <order>50</order>
+  </MainButtonDef>
+  
+ <PawnTableDef>
+    <defName>Vehicles</defName>
+    <workerClass>VehiclesSource.Tab.PawnTable_Vehicles</workerClass>
+    <columns>
+      <li>Label</li>
+	  <li>Gas</li>
+    </columns>
+  </PawnTableDef>
+  
+</Defs>

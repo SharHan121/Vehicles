@@ -11,6 +11,7 @@ namespace VehiclesSource.Jobs
     {
         public VehiclesSource.Pawns.Pawn_Vehicle pawn_v => TargetA.Thing as VehiclesSource.Pawns.Pawn_Vehicle;
 
+
         Thing thing => TargetB.Thing;
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
@@ -20,15 +21,15 @@ namespace VehiclesSource.Jobs
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            
 
-            yield return Toils_Reserve.Reserve(TargetIndex.B);
+                yield return Toils_Reserve.Reserve(TargetIndex.B);
 
-            yield return Toils_Goto.GotoThing(TargetIndex.B,PathEndMode.ClosestTouch).FailOnDespawnedNullOrForbidden(TargetIndex.B);
+                yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch).FailOnDespawnedNullOrForbidden(TargetIndex.B);
 
-            yield return Toils_Haul.TakeToInventory(TargetIndex.B, 
-                thing.stackCount < (pawn_v.maxGase - pawn_v.gas) ? thing.stackCount : pawn_v.maxGase - pawn_v.gas);
-            
+                yield return Toils_Haul.TakeToInventory(TargetIndex.B,
+                    thing.stackCount < (pawn_v.maxGase - pawn_v.gas) ? thing.stackCount : pawn_v.maxGase - pawn_v.gas);
+
+
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch).FailOnDespawnedNullOrForbidden(TargetIndex.A);
 
             yield return Toils_General.Wait(700).WithProgressBarToilDelay(TargetIndex.A).FailOnDespawnedNullOrForbidden(TargetIndex.A);

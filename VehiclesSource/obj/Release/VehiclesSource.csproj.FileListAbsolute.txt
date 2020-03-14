@@ -8,3 +8,5 @@ C:\Users\Vlad\Documents\GitHub\Vehicles\VehiclesSource\bin\Release\VehiclesSourc
 C:\Users\Vlad\Documents\GitHub\Vehicles\VehiclesSource\obj\Release\VehiclesSource.csprojAssemblyReference.cache
 C:\Users\Vlad\Documents\GitHub\Vehicles\VehiclesSource\obj\Release\VehiclesSource.dll
 C:\Users\Vlad\Documents\GitHub\Vehicles\VehiclesSource\obj\Release\VehiclesSource.pdb
+C:\Users\1\Documents\GitHub\Vehicles\VehiclesSource\bin\Release\UnityEngine.IMGUIModule.dll
+C:\Users\1\Documents\GitHub\Vehicles\VehiclesSource\obj\Release\VehiclesSource.csproj.CopyComplete

@@ -51,15 +51,24 @@
       <HintPath>Libs\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>Libs\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BodyPartDefOfLocal.cs" />
     <Compile Include="Buildings\Building_TestB.cs" />
-    <Compile Include="GameComps.cs" />
+    <Compile Include="ITabLocal\ITab_Pawn_VehicleGN.cs" />
+    <Compile Include="VehicleComponent.cs" />
     <Compile Include="JobDefOfLocal.cs" />
     <Compile Include="Jobs\JobDriver_SeatPawnToCar.cs" />
     <Compile Include="Jobs\JobDriver_FillTheCar.cs" />
     <Compile Include="Pawns\Pawn_Vehicle.cs" />
+    <Compile Include="PawnTableDefOfLoacl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tab\MainTabWindow_Vehicles.cs" />
+    <Compile Include="Tab\PawnColumnWorker_Gas.cs" />
+    <Compile Include="Tab\PawnTable_Vehicles.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
