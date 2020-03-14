@@ -12,7 +12,7 @@ namespace VehiclesSource.Jobs
         public VehiclesSource.Pawns.Pawn_Vehicle pawn_v => TargetA.Thing as VehiclesSource.Pawns.Pawn_Vehicle;
 
 
-        Thing thing => TargetB.Thing;
+        Thing fuel => TargetB.Thing;
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
@@ -27,7 +27,7 @@ namespace VehiclesSource.Jobs
                 yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch).FailOnDespawnedNullOrForbidden(TargetIndex.B);
 
                 yield return Toils_Haul.TakeToInventory(TargetIndex.B,
-                    thing.stackCount < (pawn_v.maxGase - pawn_v.gas) ? thing.stackCount : pawn_v.maxGase - pawn_v.gas);
+                    fuel.stackCount < (pawn_v.maxGase - pawn_v.gas) ? fuel.stackCount : pawn_v.maxGase - pawn_v.gas);
 
 
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch).FailOnDespawnedNullOrForbidden(TargetIndex.A);
@@ -42,7 +42,7 @@ namespace VehiclesSource.Jobs
                     if (pawn_v != null)
                     {
                         pawn_v.gas += pawn.inventory.innerContainer.Last().stackCount;
-                        pawn.inventory.innerContainer.Remove(thing);
+                        pawn.inventory.innerContainer.Remove(fuel);
                     }
                 },
                 defaultCompleteMode = ToilCompleteMode.Instant
