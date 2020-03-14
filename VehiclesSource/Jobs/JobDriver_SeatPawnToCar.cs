@@ -12,7 +12,7 @@ namespace VehiclesSource.Jobs
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            if (pawn_v.pawnOnVehicle < 4)
+            if (pawn_v.pawnsInVehicle.Count < pawn_v.maxPawnOnVehicle)
                 return true;
             else
                 return false;
@@ -29,7 +29,7 @@ namespace VehiclesSource.Jobs
             {
                 if (pawn_v != null)
                 {
-                    if (pawn_v.pawnOnVehicle < 4)
+                    if (pawn_v.pawnsInVehicle.Count < pawn_v.maxPawnOnVehicle)
                     {
                         pawn_v.SeatToCar(this.pawn);
                     }

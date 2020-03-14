@@ -12,9 +12,13 @@ namespace VehiclesSource.Pawns
 
     class Pawn_Vehicle : Pawn, IAttackTarget, IThingHolder
     {
-        public int pawnOnVehicle = 0;
+        public int maxPawnOnVehicle = 6;
 
         public int maxGase = 500;
+
+        public bool battleVehicle = false;
+
+        public List<Pawn> pawnsInVehicle = new List<Pawn>();
 
         public int gas = 0;
 
@@ -28,8 +32,7 @@ namespace VehiclesSource.Pawns
                 return gs;
             }
         }
-
-
+        
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
@@ -40,20 +43,24 @@ namespace VehiclesSource.Pawns
         public void SeatToCar(Pawn pawn)
         {
             this.inventory.TryAddItemNotForSale(pawn.SplitOff(1));
-            pawnOnVehicle++;
+            pawnsInVehicle.Add(pawn);
+        }
+
+        public void UnSeatToCar(Pawn pawn)
+        {
+            this.inventory.innerContainer.TryDrop(pawn,ThingPlaceMode.Near,out Thing thing);
+            pawnsInVehicle.Remove(pawn);
         }
 
 
         public override string GetInspectString()
         {
             string istring = "";
-            pawnOnVehicle = 0; // оптимизированая проверка количеста людей в машине
-            foreach (Pawn pawn in this.inventory.innerContainer)
+            foreach (Pawn pawn in this.pawnsInVehicle)
             {
                 if (pawn.IsColonist)
                 {
                     istring += pawn.Name.ToString() + "\n";
-                    pawnOnVehicle++;
                 }
             }
             istring += "\0" + "\n" + $"Gas left: {this.gas} \\ {this.maxGase}";
@@ -64,7 +71,7 @@ namespace VehiclesSource.Pawns
         {
             if (!this.Downed && !this.Dead)
             {
-                if (pawnOnVehicle < 4)
+                if (pawnsInVehicle.Count < 4)
                     yield return new FloatMenuOption("Seat on the car", delegate
                     {
                         Job job = new Job(JobDefOfLocal.SeatPawnToCar, this);
@@ -82,7 +89,7 @@ namespace VehiclesSource.Pawns
                         selPawn.jobs.TryTakeOrderedJob(job);
                     });
             }
-            }
+        }
 
 
 
