@@ -72,7 +72,7 @@ namespace VehiclesSource.Pawns
             if (!this.Downed && !this.Dead)
             {
                 if (pawnsInVehicle.Count < 4)
-                    yield return new FloatMenuOption("Seat on the car", delegate
+                    yield return new FloatMenuOption("Seat in", delegate
                     {
                         Job job = new Job(JobDefOfLocal.SeatPawnToCar, this);
                         job.count = 1;
@@ -83,7 +83,7 @@ namespace VehiclesSource.Pawns
                     yield return new FloatMenuOption("Fill with gasoline", delegate
                     {
                         IEnumerable<Thing> GasOnMap = Map.listerThings.ThingsOfDef(ThingDef.Named("Chemfuel"));
-                        Job job = new Job(JobDefOfLocal.FillTheCar, this,GasOnMap.RandomElement());
+                        Job job = new Job(JobDefOfLocal.FillTheCar, this, GasOnMap.RandomElement());
                         job.playerForced = true;
                         job.count = 1;
                         selPawn.jobs.TryTakeOrderedJob(job);
