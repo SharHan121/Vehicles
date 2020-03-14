@@ -27,12 +27,12 @@ namespace VehiclesSource.Jobs
                 yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch).FailOnDespawnedNullOrForbidden(TargetIndex.B);
 
                 yield return Toils_Haul.TakeToInventory(TargetIndex.B,
-                    fuel.stackCount < (pawn_v.maxGase - pawn_v.gas) ? fuel.stackCount : pawn_v.maxGase - pawn_v.gas);
-
+                 pawn_v.maxGase - pawn_v.gas);
+            //    fuel.stackCount < (pawn_v.maxGase - pawn_v.gas) ? fuel.stackCount :
 
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch).FailOnDespawnedNullOrForbidden(TargetIndex.A);
 
-            yield return Toils_General.Wait(700).WithProgressBarToilDelay(TargetIndex.A).FailOnDespawnedNullOrForbidden(TargetIndex.A);
+            yield return Toils_General.Wait(450).WithProgressBarToilDelay(TargetIndex.A).FailOnDespawnedNullOrForbidden(TargetIndex.A);
 
             Toil finish = new Toil
             {
@@ -42,7 +42,7 @@ namespace VehiclesSource.Jobs
                     if (pawn_v != null)
                     {
                         pawn_v.gas += pawn.inventory.innerContainer.Last().stackCount;
-                        pawn.inventory.innerContainer.Remove(fuel);
+                        pawn.inventory.innerContainer.Remove(pawn.inventory.innerContainer.Last());
                     }
                 },
                 defaultCompleteMode = ToilCompleteMode.Instant
