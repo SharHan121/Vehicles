@@ -38,9 +38,23 @@ namespace VehiclesSource.ITabLocal
 			}
 			for (int i = 0; i < PawnV.pawnsInVehicle.Count; i++)
 			{
-				Rect Cell = new Rect(20f + i * 84f, 25f, 64f, 64f);
-				GUI.DrawTexture(Cell, PortraitsCache.Get(PawnV.pawnsInVehicle.ElementAt(i),
-					new Vector2(64f, 64f), default(Vector3), 1.13f));
+				Rect Cell_Rect = new Rect(20f + i * 84f, 25f, 64f, 64f);
+				Pawn pawn = PawnV.pawnsInVehicle.ElementAt(i);
+				GUI.DrawTexture(Cell_Rect, PortraitsCache.Get(pawn,
+					new Vector2(64f, 64f), default(Vector3), 1.5f));
+				DrawCellRows(Cell_Rect, pawn);
+			}
+		}
+
+		private void DrawCellRows(Rect rect,Pawn pawn)
+		{
+			if(pawn != null && Mouse.IsOver(rect))
+			{
+				Rect DropCell_Rect = new Rect(rect.xMax - 20f, rect.y, 20f, 20f);
+				if (Widgets.ButtonImage(DropCell_Rect, ContentFinder<Texture2D>.Get("UI/Buttons/Drop")))
+				{
+					PawnV.UnSeatToCar(pawn);
+				}
 			}
 		}
 
