@@ -49,6 +49,7 @@ namespace VehiclesSource.Pawns
         public void UnSeatToCar(Pawn pawn)
         {
             this.inventory.innerContainer.TryDrop(pawn,ThingPlaceMode.Near,out Thing thing);
+            this.
             pawnsInVehicle.Remove(pawn);
         }
 
@@ -88,6 +89,7 @@ namespace VehiclesSource.Pawns
                         job.count = 1;
                         selPawn.jobs.TryTakeOrderedJob(job);
                     });
+                
             }
         }
 
