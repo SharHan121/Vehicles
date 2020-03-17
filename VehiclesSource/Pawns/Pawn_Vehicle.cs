@@ -89,13 +89,10 @@ namespace VehiclesSource.Pawns
                         job.count = 1;
                         selPawn.jobs.TryTakeOrderedJob(job);
                     });
-<<<<<<< HEAD
-                
-=======
                  FloatMenuOption auebutton = new FloatMenuOption("viad loh", delegate { });
                  auebutton.Disabled = true;
                  yield return auebutton;
->>>>>>> be9b8cdf5d955c82bb73a6d92509fd3c1f253563
+
             }
         }
         

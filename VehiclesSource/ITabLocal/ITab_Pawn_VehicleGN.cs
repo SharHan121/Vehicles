@@ -24,8 +24,6 @@ namespace VehiclesSource.ITabLocal
 
 		Color Whiteblue = new Color(0.45f, 1.0f, 0.9f,1f);
 
-
-
 		private float WindowSizeY
 		{
 			get
@@ -96,6 +94,11 @@ namespace VehiclesSource.ITabLocal
 				//Rect DropCell_Rect = new Rect(rect.xMax - 20f, rect.yMax - 20.5f, 20f, 20f);
 				Rect DropCell_Rect = new Rect(rect.xMax - 20f, rect.yMin + 0.5f, 20f, 20f);
 
+				if (Widgets.ButtonImage(DropCell_Rect, ContentFinder<Texture2D>.Get("UI/Buttons/Drop")))
+				{
+					PawnV.UnSeatToCar(pawn);
+				}
+
 				if (Widgets.ButtonImage(rect, null))
 					if (localSelPawn != pawn || !this.AdvancedMode)
 					{
@@ -107,11 +110,6 @@ namespace VehiclesSource.ITabLocal
 					{
 						this.AdvancedMode = false;
 					}
-
-				if (Widgets.ButtonImage(DropCell_Rect, ContentFinder<Texture2D>.Get("UI/Buttons/Drop")))
-				{
-					PawnV.UnSeatToCar(pawn);
-				}
 			}
 		}
 
@@ -119,7 +117,7 @@ namespace VehiclesSource.ITabLocal
 		{
 			GUI.color = Color.gray;
 			Widgets.DrawLineHorizontal(20f, AdvancedMode_Rect.y, AdvancedMode_Rect.x-40f);
-			HealthCardUtility.DrawHediffListing(new Rect(20f, 30f, AdvancedMode_Rect.x-40f, AdvancedMode_Rect.y), localSelPawn, true);
+			HealthCardUtility.DrawHediffListing(new Rect(20f, 30f, AdvancedMode_Rect.x-40f, AdvancedMode_Rect.y), localSelPawn, true);   
 		}
 	}
 }
